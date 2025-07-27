@@ -11,7 +11,8 @@
         return Math.floor(Math.random() * (max - min)) + min;
       }
       const themes = ["ocean", "cyber", "vanta"];
-      let theme = themes[getRandomInt(0, themes.length)];
+      let theme = localStorage.getItem("theme");
+      if (theme === null) theme = themes[getRandomInt(0, themes.length)];
       localStorage.setItem("theme", theme)
       window.location.href = `${theme}.html${window.location.hash}`;
     </script>
