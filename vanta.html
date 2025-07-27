@@ -12,7 +12,7 @@
           localStorage.setItem("theme", theme);
           return;
         }
-        window.location.href = `${theme}.html`;
+        window.location.href = `${theme}.html${window.location.hash}`;
       })();
     </script>
     <link
