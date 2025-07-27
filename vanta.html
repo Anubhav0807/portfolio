@@ -5,18 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anubhav Jha | SDE Portfolio</title>
     <script>
-      (function () {
-        const ocean = "index.html";
-        const cyber = "cyber.html";
-        const vanta = "vanta.html";
-        
+      (function () {        
         let theme = localStorage.getItem("theme");
-        if (theme === null || theme === "vanta.html") {
-          theme = ocean;
+        if (theme === null || theme === "vanta") {
+          theme = "ocean";
           localStorage.setItem("theme", theme);
           return;
         }
-        window.location.href = theme;
+        window.location.href = `${theme}.html`;
       })();
     </script>
     <link
@@ -590,7 +586,7 @@
         document.getElementById("mobileNav").classList.toggle("active");
       }
 
-      AOS.init({ duration: 1000, once: true });
+      AOS.init({ duration: 1000, once: false });
 
       VANTA.NET({
         el: "#background",

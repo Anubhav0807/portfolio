@@ -7,8 +7,8 @@
     <script>
       (function () {
         let theme = localStorage.getItem("theme");
-        if (theme === null || theme === "cyber") {
-          theme = "vanta";
+        if (theme === null || theme === "ocean") {
+          theme = "cyber";
           localStorage.setItem("theme", theme);
           return;
         }
@@ -20,12 +20,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.cells.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <style>
       * {
@@ -33,14 +29,13 @@
         padding: 0;
         box-sizing: border-box;
         scroll-behavior: smooth;
-        font-family: "Orbitron", sans-serif;
+        font-family: "JetBrains Mono", monospace;
       }
       body {
-        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-        color: #e0e0e0;
+        background: #0f0f0f;
+        color: #dddddd;
         overflow-x: hidden;
         scroll-snap-type: y mandatory;
-        font-family: "Orbitron", sans-serif;
       }
       section {
         scroll-snap-align: start;
@@ -89,7 +84,7 @@
         color: #bbbbbb;
       }
       .typed-text {
-        color: #00fff7;
+        color: #63a4ff;
         font-size: 1.5rem;
         margin-top: 1rem;
         text-align: center;
@@ -105,10 +100,10 @@
         margin-top: 2rem;
       }
       .card {
-        background: #302b63dd;
+        background: rgba(255, 255, 255, 0.05);
         padding: 1.5rem;
         border-radius: 10px;
-        border: 1px solid #00fff7;
+        border: 1px solid #333;
         text-align: left;
       }
       .card:hover {
@@ -129,7 +124,7 @@
       }
       a.button {
         color: #101010;
-        background: #00fff7;
+        background: #63a4ff;
         padding: 0.6rem 1.2rem;
         border-radius: 5px;
         text-decoration: none;
@@ -139,7 +134,7 @@
         transition: background-color 0.3s ease, transform 0.2s ease;
       }
       a.button:hover {
-        background: #00c1ff;
+        background: #3b82f6;
         transform: scale(1.05);
       }
       #background {
@@ -588,7 +583,7 @@
 
       AOS.init({ duration: 1000, once: false });
 
-      VANTA.GLOBE({
+      VANTA.CELLS({
         el: "#background",
         mouseControls: true,
         touchControls: true,
@@ -597,10 +592,9 @@
         minWidth: 200.0,
         scale: 1.0,
         scaleMobile: 1.0,
-        color: 0xff00ff,
-        color2: 0x00ffff,
-        backgroundColor: 0x0f0c29,
-        size: 1.2,
+        color1: 0x63a4ff,
+        color2: 0x0f0f0f,
+        backgroundColor: 0x0f0f0f,
       });
 
       new Typed("#typed", {
